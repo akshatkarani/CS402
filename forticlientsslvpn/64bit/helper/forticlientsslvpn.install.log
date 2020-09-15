@@ -1,0 +1,4 @@
+Checking if pppd is installed...OK
+Checking if iproute package is installed...OK
+Setup /home/akshat/Acad/CS402/forticlientsslvpn/64bit/./helper/subproc
+/home/akshat/Acad/CS402/forticlientsslvpn/64bit/./helper/waitppp.sh
