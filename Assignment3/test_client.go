@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net"
 	"os"
+	"time"
 )
 
 func main() {
@@ -15,7 +16,7 @@ func main() {
 		fmt.Printf("Some error %v", err)
 		return
 	}
-	fmt.Fprintf(conn, "Hi UDP Server, How are you doing?")
+	fmt.Fprintf(conn, time.Now().String())
 	_, err = bufio.NewReader(conn).Read(p)
 	if err == nil {
 		fmt.Printf("%s\n", p)

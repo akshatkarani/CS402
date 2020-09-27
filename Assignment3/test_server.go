@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net"
+	"time"
 )
 
 func sendResponse(conn *net.UDPConn, addr *net.UDPAddr) {
@@ -25,6 +26,8 @@ func main() {
 	}
 	for {
 		_, remoteaddr, err := ser.ReadFromUDP(p)
+		var lt *time.Time
+		err = lt.UnmarshalText(p)
 		fmt.Println("Message from ", remoteaddr.IP)
 		fmt.Printf("Read a message from %v %s \n", remoteaddr, p)
 		if err != nil {
