@@ -1,73 +1,3 @@
-09/06/2020 13:27:24 [16800] restore /etc/resolv.conf
-09/06/2020 13:27:24 [16800] clean up route...
-09/06/2020 13:27:24 [16800] truncate pppd.log
-09/06/2020 13:27:24 [16800] truncate forticlientsslvpn.log
-09/06/2020 13:27:24 [16771] ssl vpn tunnel stopped
-09/06/2020 13:27:24 [16771] rcv cmd:2 at state[0]
-09/06/2020 13:27:46 [16810] set the loglevel to 1
-09/06/2020 13:27:46 [16810] sslvpn connection version:4.0.2332
-09/06/2020 13:27:46 [16635] set the loglevel to 1
-09/06/2020 13:27:46 [16810] rcv cmd:0 at state[0]
-09/06/2020 13:27:46 [16810] starting ssl vpn tunnel[4.0.2332]
-09/06/2020 13:27:46 [16814] route backup START
-09/06/2020 13:27:46 [16814] route backup DONE
-09/06/2020 13:27:46 [16815] execl /home/akshat/Acad/CS402/forticlientsslvpn/64bit/./helper/get_fortisslvpn_info /home/akshat/Acad/CS402/forticlientsslvpn/64bit/./helper vpn.iitdh.ac.in 10443   ...
-09/06/2020 13:27:46 [16815] trusted CA dir: /home/akshat/.fctsslvpn_trustca
-09/06/2020 13:27:46 [16815] set loglevel to 1
-09/06/2020 13:27:47 [16815] Peer's certificate is not valid. action is 1
-09/06/2020 13:27:47 [16815] peer's certificate: 
-Certificate:$    Data:$        Version: 3 (0x2)$        Serial Number:$            c4:17:35:62:e3:d3:eb:64$    Signature Algorithm: sha256WithRSAEncryption$        Issuer: C=US, ST=Arizona, L=Scottsdale, O=GoDaddy.com, Inc., OU=http://certs.godaddy.com/repository/, CN=Go Daddy Secure Certificate Authority - G2$        Validity$            Not Before: Sep  8 15:56:33 2019 GMT$            Not After : Sep  3 14:42:32 2020 GMT$        Subject: OU=Domain Control Validated, CN=*.iitdh.ac.in$        Subject Public Key Info:$            Public Key Algorithm: rsaEncryption$                Public-Key: (2048 bit)$                Modulus:$                    00:c5:d2:f9:8c:b2:d6:2b:88:e9:f4:9b:39:26:69:$                    1b:3f:ac:8f:1d:9c:66:b2:6e:44:f5:b8:f8:44:03:$                    1c:84:22:82:40:9a:e6:68:80:80:39:b9:1d:e0:41:$                    0f:ea:d1:a2:56:f0:af:78:a3:06:50:cb:d2:6e:ca:$                    df:8a:81:d2:48:84:84:e6:2b:1f:10:34:ea:20:8f:$                    a9:49:9a:e7:4d:6e:65:9d:63:e3:eb:a9:ae:68:f6:$                    88:4a:dc:6c:47:37:92:4e:e1:11:d5:3f:c8:a7:ce:$                    1d:c2:03:87:8e:49:21:de:02:1f:33:58:8f:c0:05:$                    ed:cb:af:1a:49:86:7b:a7:63:6d:0c:a3:ba:1d:c2:$                    67:c6:fc:0d:92:6d:c3:fe:ed:e4:12:7f:95:31:9e:$                    cc:b7:03:3f:c3:d0:7c:73:dd:08:2b:dc:c3:ad:5f:$                    2a:5a:5d:98:5b:24:0c:03:31:6e:17:97:0e:67:96:$                    71:d1:97:f8:4f:0e:d0:0c:0b:a0:92:ed:9d:31:7b:$                    69:cf:d3:0d:7c:85:3c:e4:16:bd:45:05:9d:c5:d0:$                    83:c1:80:e8:3d:fa:02:97:10:3d:31:d4:92:16:3d:$                    09:14:58:9f:cc:36:d7:d6:92:f8:f9:27:b2:e5:9e:$                    eb:fe:44:6a:8f:cb:5e:99:fc:f3:3a:66:d6:21:b1:$                    8a:d1$                Exponent: 65537 (0x10001)$        X509v3 extensions:$            X509v3 Basic Constraints: critical$                CA:FALSE$            X509v3 Extended Key Usage: $                TLS Web Server Authentication, TLS Web Client Authentication$            X509v3 Key Usage: critical$                Digital Signature, Key Encipherment$            X509v3 CRL Distribution Points: $$                Full Name:$                  URI:http://crl.godaddy.com/gdig2s1-1374.crl$$            X509v3 Certificate Policies: $                Policy: 2.16.840.1.114413.1.7.23.1$                  CPS: http://certificates.godaddy.com/repository/$                Policy: 2.23.140.1.2.1$$            Authority Information Access: $                OCSP - URI:http://ocsp.godaddy.com/$                CA Issuers - URI:http://certificates.godaddy.com/repository/gdig2.crt$$            X509v3 Authority Key Identifier: $                keyid:40:C2:BD:27:8E:CC:34:83:30:A2:33:D7:FB:6C:B3:F0:B4:2C:80:CE$$            X509v3 Subject Alternative Name: $                DNS:*.iitdh.ac.in, DNS:iitdh.ac.in$            X509v3 Subject Key Identifier: $                4F:90:57:DC:40:BE:1D:AC:7B:A0:E4:C8:E4:39:A3:6D:5E:13:A2:7E$            CT Precertificate SCTs: $                Signed Certificate Timestamp:$                    Version   : v1(0)$                    Log ID    : A4:B9:09:90:B4:18:58:14:87:BB:13:A2:CC:67:70:0A:$                                3C:35:98:04:F9:1B:DF:B8:E3:77:CD:0E:C8:0D:DC:10$                    Timestamp : Sep  8 15:56:34.084 2019 GMT$                    Extensions: none$                    Signature : ecdsa-with-SHA256$                                30:45:02:21:00:CD:1E:CF:0B:EB:45:6C:F9:3D:1F:07:$                                75:86:59:66:35:E2:65:22:7F:72:31:3E:B9:84:FD:58:$                                74:04:9F:FB:40:02:20:7B:9E:6E:EF:12:4D:21:C5:CB:$                                40:47:1D:59:A6:4A:3E:82:82:4B:10:44:50:85:EF:8D:$                                52:E7:CB:FA:4D:49:92$                Signed Certificate Timestamp:$                    Version   : v1(0)$                    Log ID    : 5E:A7:73:F9:DF:56:C0:E7:B5:36:48:7D:D0:49:E0:32:$                                7A:91:9A:0C:84:A1:12:12:84:18:75:96:81:71:45:58$                    Timestamp : Sep  8 15:56:34.828 2019 GMT$                    Extensions: none$                    Signature : ecdsa-with-SHA256$                                30:45:02:20:2B:7A:9A:4F:CC:F0:2E:8C:35:B4:8A:DE:$                                E5:AC:2F:A0:10:12:C7:E4:EC:78:C7:DF:5A:E8:C9:9C:$                                AF:5B:33:4E:02:21:00:EB:1F:AD:4C:4F:A2:1C:FD:14:$                                BE:C6:9E:D6:9A:AB:C9:64:32:F6:2A:86:CB:74:78:1A:$                                BA:34:14:E0:98:9F:FD$    Signature Algorithm: sha256WithRSAEncryption$         4b:30:b8:e0:6f:da:c1:c7:ce:32:9e:99:3a:1e:e6:93:b1:f5:$         42:f5:5f:8d:e1:ac:5c:d9:7f:0f:56:c6:24:5d:b0:ea:b7:73:$         08:4b:e9:57:44:fc:5b:28:56:8a:cf:bd:6c:aa:08:1d:b6:35:$         63:be:80:fc:91:49:18:c4:60:2c:c3:cf:84:bb:81:9b:d5:bd:$         5d:55:bc:be:cb:07:30:91:27:6c:a3:c5:32:a5:5e:56:db:95:$         dc:37:9a:25:2b:54:ce:2c:82:90:e6:0c:93:09:04:37:3e:c3:$         de:be:59:64:6f:ee:7a:49:f5:ad:c0:c1:a4:46:2e:f1:90:a1:$         00:d7:e8:2c:8c:4d:89:15:5a:47:bf:cd:5c:8a:85:98:d0:da:$         02:d9:d6:f4:b0:1b:d6:8a:a2:61:12:5d:6d:e8:c4:14:98:21:$         94:9b:d8:5c:ff:e6:59:91:88:ed:8e:ba:75:3e:5b:c0:87:9a:$         d5:93:b7:92:27:0f:af:17:29:88:97:5f:63:58:e7:a7:02:da:$         c9:6d:d6:23:f8:cc:93:77:b3:7e:91:ea:a3:84:f7:0c:05:ed:$         8c:d9:7a:0a:11:8c:c6:4d:b6:dc:2d:fe:cf:9c:c9:b7:b5:66:$         bd:e4:7c:dd:0d:e2:8a:98:74:6b:5c:68:0e:1a:7a:6d:36:35:$         a4:f2:ee:d6$
-09/06/2020 13:27:47 [16815] realm is enabled: 
-09/06/2020 13:27:48 [16815] no Content-Length
-09/06/2020 13:27:48 [16815] try to get cookie for the first time: 98 :  SVPNNETWORKCOOKIE=; path=/remote/network; expires=Sun, 06-Sep-2020 07:57:47 GMT; secure; httponly
-09/06/2020 13:27:48 [16815] no Content-Length
-09/06/2020 13:27:48 [16815] cookie: SVPNCOOKIE=GrmRBIMpiEyGgD9LO4fWUD6LZckQTgJ44SqNSYpx8XP1rx/8mL05PsD8/eRidl2ffrec19rvm8O3iCMo9mabgLiNfys+Q3PjmL8Gvkc9kDjwyAdPhhmlmXk7A/IDSLlXD+ujGcTbr3jl4v9tAMXOX5NfpXRNGhyhrWaX446CH1qygzl0ednqB+8ueM3okk82L/XEIpFOkOs/1w9sHrDZWg==
-09/06/2020 13:27:48 [16815] no Content-Length
-09/06/2020 13:27:48 [16815] no Content-Length
-09/06/2020 13:27:48 [16815] 0|vpn.iitdh.ac.in|10443|1|10.0.0.0/255.0.0.0|GrmRBIMpiEyGgD9LO4fWUD6LZckQTgJ44SqNSYpx8XP1rx/8mL05PsD8/eRidl2ffrec19rvm8O3iCMo9mabgLiNfys+Q3PjmL8Gvkc9kDjwyAdPhhmlmXk7A/IDSLlXD+ujGcTbr3jl4v9tAMXOX5NfpXRNGhyhrWaX446CH1qygzl0ednqB+8ueM3okk82L/XEIpFOkOs/1w9sHrDZWg==|0
-09/06/2020 13:27:48 [16810] ssl vpn tunnel started
-09/06/2020 13:27:48 [16822] server=vpn.iitdh.ac.in[vpn.iitdh.ac.in] port=10443[10443] version=1 tunnel=10.0.0.0/255.0.0.0 cookie=GrmRBIMpiEyGgD9LO4fWUD6LZckQTgJ44SqNSYpx8XP1rx/8mL05PsD8/eRidl2ffrec19rvm8O3iCMo9mabgLiNfys+Q3PjmL8Gvkc9kDjwyAdPhhmlmXk7A/IDSLlXD+ujGcTbr3jl4v9tAMXOX5NfpXRNGhyhrWaX446CH1qygzl0ednqB+8ueM3okk82L/XEIpFOkOs/1w9sHrDZWg== exclusive routing: 0
-
-09/06/2020 13:27:48 [16822] starting pppd
-09/06/2020 13:27:48 [16822] use tty:/dev/pts/1
-09/06/2020 13:27:48 [16822] connecting to vpn.iitdh.ac.in:10443
-09/06/2020 13:27:49 [16822] [xml config]: GET /remote/fortisslvpn_xml ... (received 896 bytes): 
-HTTP/1.1 200 OK
-Date: Sun, 06 Sep 2020 07:57:48 GMT
-Server: xxxxxxxx-xxxxx
-Transfer-Encoding: chunked
-Content-Type: text/xml
-X-Frame-Options: SAMEORIGIN
-Content-Security-Policy: frame-ancestors 'self'
-X-XSS-Protection: 1; mode=block
-X-Content-Type-Options: nosniff
-Strict-Transport-Security: max-age=28800
-
-<?xml version='1.0' encoding='utf-8'?><sslvpn-tunnel ver='2' dtls='1' patch='1'><dtls-config heartbeat-interval='10' heartbeat-fail-count='10' heartbeat-idle-timeout='10' client-hello-timeout='10' /><fos platform='FG200E' major='5' minor='04' patch='9' build='8038' branch='1202' /><client-config save-password='on' keep-alive='off' auto-connect='off' /><ipv4><dns ip='10.250.200.3' /><assigned-addr ipv4='10.212.134.11' /><split-tunnel-info><addr ip='10.0.0.0' mask='255.0.0.0' /></split-tunnel-info></ipv4><idle-timeout val='300' /><auth-timeout val='28800' /></sslvpn-tunnel>
-----
-
-09/06/2020 13:27:49 [16822] dns suffix: 
-
-09/06/2020 13:27:49 [16822] xml parsing split tunnel info
-09/06/2020 13:27:49 [16822] xml parse split tunnel info success. Buffer length: 19 bytes
-09/06/2020 13:27:49 [16822] Got local address from ppp, interface will be  up
-09/06/2020 13:28:03 [16822] ppp interface is up
-09/06/2020 13:28:03 [16822] run_scutil 14.139.150.66 0 0...
-09/06/2020 13:28:03 [16822] write argument OK.
-Generating pppd.resolv.conf...Done
-09/06/2020 13:28:04 [16863] begin sysconfig linux
-09/06/2020 13:28:04 [16863] Gateway to FGT: 192.168.0.1
-09/06/2020 13:28:04 [16863] delete route 1.1.1.1
-09/06/2020 13:28:04 [16863] Add the route for 14.139.150.66(192.168.0.1)
-09/06/2020 13:28:04 [16863] Setup split tunnel
-09/06/2020 13:28:04 [16863] route -n add -net 10.0.0.0 netmask 255.0.0.0 gw 10.212.134.11 dev ppp0
-09/06/2020 13:28:17 [16810] rcv cmd:1 at state[1]
-09/06/2020 13:28:17 [16810] stopping ssl vpn tunnel[v4.0.2332]
-09/06/2020 13:28:17 [16810] kill_child:16822
-09/06/2020 13:28:17 [16810] kill_child:16815
-09/06/2020 13:28:17 [16822] killing pppd ...
-09/06/2020 13:28:17 [16815] signal rcved, logout now
-09/06/2020 13:28:17 [16822] kill_child:16824
 09/06/2020 13:28:17 [16822] kill_child:16863
 09/06/2020 13:28:17 [16810] tunnel terminated
 09/06/2020 13:28:17 [16944] begin cleanup linux...
@@ -300,3 +230,72 @@ Generating pppd.resolv.conf...Done
 09/09/2020 16:27:23 [9420] truncate forticlientsslvpn.log
 09/09/2020 16:27:23 [8891] ssl vpn tunnel stopped
 09/09/2020 16:27:23 [8891] rcv cmd:2 at state[0]
+09/22/2020 15:56:37 [5563] set the loglevel to 1
+09/22/2020 15:56:37 [5571] set the loglevel to 1
+09/22/2020 15:56:37 [5571] sslvpn connection version:4.0.2332
+09/22/2020 15:56:37 [5571] rcv cmd:0 at state[0]
+09/22/2020 15:56:37 [5571] starting ssl vpn tunnel[4.0.2332]
+09/22/2020 15:56:37 [5575] route backup START
+09/22/2020 15:56:37 [5575] route backup DONE
+09/22/2020 15:56:37 [5576] execl /home/akshat/Acad/CS402/forticlientsslvpn/64bit/./helper/get_fortisslvpn_info /home/akshat/Acad/CS402/forticlientsslvpn/64bit/./helper vpn.iitdh.ac.in 10443   ...
+09/22/2020 15:56:37 [5576] trusted CA dir: /home/akshat/.fctsslvpn_trustca
+09/22/2020 15:56:37 [5576] set loglevel to 1
+09/22/2020 15:56:37 [5576] Peer's certificate is not valid. action is 1
+09/22/2020 15:56:37 [5576] peer's certificate: 
+Certificate:$    Data:$        Version: 3 (0x2)$        Serial Number:$            c4:17:35:62:e3:d3:eb:64$    Signature Algorithm: sha256WithRSAEncryption$        Issuer: C=US, ST=Arizona, L=Scottsdale, O=GoDaddy.com, Inc., OU=http://certs.godaddy.com/repository/, CN=Go Daddy Secure Certificate Authority - G2$        Validity$            Not Before: Sep  8 15:56:33 2019 GMT$            Not After : Sep  3 14:42:32 2020 GMT$        Subject: OU=Domain Control Validated, CN=*.iitdh.ac.in$        Subject Public Key Info:$            Public Key Algorithm: rsaEncryption$                Public-Key: (2048 bit)$                Modulus:$                    00:c5:d2:f9:8c:b2:d6:2b:88:e9:f4:9b:39:26:69:$                    1b:3f:ac:8f:1d:9c:66:b2:6e:44:f5:b8:f8:44:03:$                    1c:84:22:82:40:9a:e6:68:80:80:39:b9:1d:e0:41:$                    0f:ea:d1:a2:56:f0:af:78:a3:06:50:cb:d2:6e:ca:$                    df:8a:81:d2:48:84:84:e6:2b:1f:10:34:ea:20:8f:$                    a9:49:9a:e7:4d:6e:65:9d:63:e3:eb:a9:ae:68:f6:$                    88:4a:dc:6c:47:37:92:4e:e1:11:d5:3f:c8:a7:ce:$                    1d:c2:03:87:8e:49:21:de:02:1f:33:58:8f:c0:05:$                    ed:cb:af:1a:49:86:7b:a7:63:6d:0c:a3:ba:1d:c2:$                    67:c6:fc:0d:92:6d:c3:fe:ed:e4:12:7f:95:31:9e:$                    cc:b7:03:3f:c3:d0:7c:73:dd:08:2b:dc:c3:ad:5f:$                    2a:5a:5d:98:5b:24:0c:03:31:6e:17:97:0e:67:96:$                    71:d1:97:f8:4f:0e:d0:0c:0b:a0:92:ed:9d:31:7b:$                    69:cf:d3:0d:7c:85:3c:e4:16:bd:45:05:9d:c5:d0:$                    83:c1:80:e8:3d:fa:02:97:10:3d:31:d4:92:16:3d:$                    09:14:58:9f:cc:36:d7:d6:92:f8:f9:27:b2:e5:9e:$                    eb:fe:44:6a:8f:cb:5e:99:fc:f3:3a:66:d6:21:b1:$                    8a:d1$                Exponent: 65537 (0x10001)$        X509v3 extensions:$            X509v3 Basic Constraints: critical$                CA:FALSE$            X509v3 Extended Key Usage: $                TLS Web Server Authentication, TLS Web Client Authentication$            X509v3 Key Usage: critical$                Digital Signature, Key Encipherment$            X509v3 CRL Distribution Points: $$                Full Name:$                  URI:http://crl.godaddy.com/gdig2s1-1374.crl$$            X509v3 Certificate Policies: $                Policy: 2.16.840.1.114413.1.7.23.1$                  CPS: http://certificates.godaddy.com/repository/$                Policy: 2.23.140.1.2.1$$            Authority Information Access: $                OCSP - URI:http://ocsp.godaddy.com/$                CA Issuers - URI:http://certificates.godaddy.com/repository/gdig2.crt$$            X509v3 Authority Key Identifier: $                keyid:40:C2:BD:27:8E:CC:34:83:30:A2:33:D7:FB:6C:B3:F0:B4:2C:80:CE$$            X509v3 Subject Alternative Name: $                DNS:*.iitdh.ac.in, DNS:iitdh.ac.in$            X509v3 Subject Key Identifier: $                4F:90:57:DC:40:BE:1D:AC:7B:A0:E4:C8:E4:39:A3:6D:5E:13:A2:7E$            CT Precertificate SCTs: $                Signed Certificate Timestamp:$                    Version   : v1(0)$                    Log ID    : A4:B9:09:90:B4:18:58:14:87:BB:13:A2:CC:67:70:0A:$                                3C:35:98:04:F9:1B:DF:B8:E3:77:CD:0E:C8:0D:DC:10$                    Timestamp : Sep  8 15:56:34.084 2019 GMT$                    Extensions: none$                    Signature : ecdsa-with-SHA256$                                30:45:02:21:00:CD:1E:CF:0B:EB:45:6C:F9:3D:1F:07:$                                75:86:59:66:35:E2:65:22:7F:72:31:3E:B9:84:FD:58:$                                74:04:9F:FB:40:02:20:7B:9E:6E:EF:12:4D:21:C5:CB:$                                40:47:1D:59:A6:4A:3E:82:82:4B:10:44:50:85:EF:8D:$                                52:E7:CB:FA:4D:49:92$                Signed Certificate Timestamp:$                    Version   : v1(0)$                    Log ID    : 5E:A7:73:F9:DF:56:C0:E7:B5:36:48:7D:D0:49:E0:32:$                                7A:91:9A:0C:84:A1:12:12:84:18:75:96:81:71:45:58$                    Timestamp : Sep  8 15:56:34.828 2019 GMT$                    Extensions: none$                    Signature : ecdsa-with-SHA256$                                30:45:02:20:2B:7A:9A:4F:CC:F0:2E:8C:35:B4:8A:DE:$                                E5:AC:2F:A0:10:12:C7:E4:EC:78:C7:DF:5A:E8:C9:9C:$                                AF:5B:33:4E:02:21:00:EB:1F:AD:4C:4F:A2:1C:FD:14:$                                BE:C6:9E:D6:9A:AB:C9:64:32:F6:2A:86:CB:74:78:1A:$                                BA:34:14:E0:98:9F:FD$    Signature Algorithm: sha256WithRSAEncryption$         4b:30:b8:e0:6f:da:c1:c7:ce:32:9e:99:3a:1e:e6:93:b1:f5:$         42:f5:5f:8d:e1:ac:5c:d9:7f:0f:56:c6:24:5d:b0:ea:b7:73:$         08:4b:e9:57:44:fc:5b:28:56:8a:cf:bd:6c:aa:08:1d:b6:35:$         63:be:80:fc:91:49:18:c4:60:2c:c3:cf:84:bb:81:9b:d5:bd:$         5d:55:bc:be:cb:07:30:91:27:6c:a3:c5:32:a5:5e:56:db:95:$         dc:37:9a:25:2b:54:ce:2c:82:90:e6:0c:93:09:04:37:3e:c3:$         de:be:59:64:6f:ee:7a:49:f5:ad:c0:c1:a4:46:2e:f1:90:a1:$         00:d7:e8:2c:8c:4d:89:15:5a:47:bf:cd:5c:8a:85:98:d0:da:$         02:d9:d6:f4:b0:1b:d6:8a:a2:61:12:5d:6d:e8:c4:14:98:21:$         94:9b:d8:5c:ff:e6:59:91:88:ed:8e:ba:75:3e:5b:c0:87:9a:$         d5:93:b7:92:27:0f:af:17:29:88:97:5f:63:58:e7:a7:02:da:$         c9:6d:d6:23:f8:cc:93:77:b3:7e:91:ea:a3:84:f7:0c:05:ed:$         8c:d9:7a:0a:11:8c:c6:4d:b6:dc:2d:fe:cf:9c:c9:b7:b5:66:$         bd:e4:7c:dd:0d:e2:8a:98:74:6b:5c:68:0e:1a:7a:6d:36:35:$         a4:f2:ee:d6$
+09/22/2020 15:56:39 [5576] realm is enabled: 
+09/22/2020 15:56:39 [5576] no Content-Length
+09/22/2020 15:56:39 [5576] try to get cookie for the first time: 98 :  SVPNNETWORKCOOKIE=; path=/remote/network; expires=Tue, 22-Sep-2020 10:25:37 GMT; secure; httponly
+09/22/2020 15:56:39 [5576] no Content-Length
+09/22/2020 15:56:39 [5576] cookie: SVPNCOOKIE=WISNVmbp3GL4XyI/6fy5Rms4pqOZN4AJ0K2n5ngcwmHK1ZLcL+ugzc9BuWW+H+WvPcLM4q4DD3iCNaGe94Z4ifnJEmGO3xyosnU+JNvYwdWGAh2LIoDTooKHj1Ue00SAo9rfrNtXX2CEFcIbC7vtkTF3mb4f1gsMOVo5G7Ib2jkaPEcPsAth9/0AHK4mQYPZm/QBB4cDSgqNn3Wk0UJ1gA==
+09/22/2020 15:56:39 [5576] no Content-Length
+09/22/2020 15:56:40 [5576] no Content-Length
+09/22/2020 15:56:40 [5576] 0|vpn.iitdh.ac.in|10443|1|10.0.0.0/255.0.0.0|WISNVmbp3GL4XyI/6fy5Rms4pqOZN4AJ0K2n5ngcwmHK1ZLcL+ugzc9BuWW+H+WvPcLM4q4DD3iCNaGe94Z4ifnJEmGO3xyosnU+JNvYwdWGAh2LIoDTooKHj1Ue00SAo9rfrNtXX2CEFcIbC7vtkTF3mb4f1gsMOVo5G7Ib2jkaPEcPsAth9/0AHK4mQYPZm/QBB4cDSgqNn3Wk0UJ1gA==|0
+09/22/2020 15:56:40 [5571] ssl vpn tunnel started
+09/22/2020 15:56:40 [5578] server=vpn.iitdh.ac.in[vpn.iitdh.ac.in] port=10443[10443] version=1 tunnel=10.0.0.0/255.0.0.0 cookie=WISNVmbp3GL4XyI/6fy5Rms4pqOZN4AJ0K2n5ngcwmHK1ZLcL+ugzc9BuWW+H+WvPcLM4q4DD3iCNaGe94Z4ifnJEmGO3xyosnU+JNvYwdWGAh2LIoDTooKHj1Ue00SAo9rfrNtXX2CEFcIbC7vtkTF3mb4f1gsMOVo5G7Ib2jkaPEcPsAth9/0AHK4mQYPZm/QBB4cDSgqNn3Wk0UJ1gA== exclusive routing: 0
+
+09/22/2020 15:56:40 [5578] starting pppd
+09/22/2020 15:56:40 [5578] use tty:/dev/pts/2
+09/22/2020 15:56:40 [5578] connecting to vpn.iitdh.ac.in:10443
+09/22/2020 15:56:41 [5578] [xml config]: GET /remote/fortisslvpn_xml ... (received 896 bytes): 
+HTTP/1.1 200 OK
+Date: Tue, 22 Sep 2020 10:25:39 GMT
+Server: xxxxxxxx-xxxxx
+Transfer-Encoding: chunked
+Content-Type: text/xml
+X-Frame-Options: SAMEORIGIN
+Content-Security-Policy: frame-ancestors 'self'
+X-XSS-Protection: 1; mode=block
+X-Content-Type-Options: nosniff
+Strict-Transport-Security: max-age=28800
+
+<?xml version='1.0' encoding='utf-8'?><sslvpn-tunnel ver='2' dtls='1' patch='1'><dtls-config heartbeat-interval='10' heartbeat-fail-count='10' heartbeat-idle-timeout='10' client-hello-timeout='10' /><fos platform='FG200E' major='5' minor='04' patch='9' build='8038' branch='1202' /><client-config save-password='on' keep-alive='off' auto-connect='off' /><ipv4><dns ip='10.250.200.3' /><assigned-addr ipv4='10.212.134.11' /><split-tunnel-info><addr ip='10.0.0.0' mask='255.0.0.0' /></split-tunnel-info></ipv4><idle-timeout val='300' /><auth-timeout val='28800' /></sslvpn-tunnel>
+----
+
+09/22/2020 15:56:41 [5578] dns suffix: 
+
+09/22/2020 15:56:41 [5578] xml parsing split tunnel info
+09/22/2020 15:56:41 [5578] xml parse split tunnel info success. Buffer length: 19 bytes
+09/22/2020 15:56:42 [5578] Got local address from ppp, interface will be  up
+09/22/2020 15:56:59 [5578] ppp interface is up
+09/22/2020 15:56:59 [5578] run_scutil 61.0.239.226 0 0...
+09/22/2020 15:56:59 [5578] write argument OK.
+Generating pppd.resolv.conf...Done
+09/22/2020 15:57:00 [5758] begin sysconfig linux
+09/22/2020 15:57:00 [5758] Gateway to FGT: 192.168.0.1
+09/22/2020 15:57:00 [5758] delete route 1.1.1.1
+09/22/2020 15:57:00 [5758] Add the route for 61.0.239.226(192.168.0.1)
+09/22/2020 15:57:00 [5758] Setup split tunnel
+09/22/2020 15:57:00 [5758] route -n add -net 10.0.0.0 netmask 255.0.0.0 gw 10.212.134.11 dev ppp0
+09/22/2020 16:05:00 [5578] killing pppd ...
+09/22/2020 16:05:00 [5571] kill_child:5578
+09/22/2020 16:05:00 [5576] signal rcved, logout now
+09/22/2020 16:05:00 [5578] kill_child:5580
+09/22/2020 16:05:00 [5571] kill_child:5576
+09/22/2020 16:05:00 [5578] kill_child:5758
+09/22/2020 16:05:00 [7666] begin cleanup linux...
+09/22/2020 16:05:00 [7666] restore /etc/resolv.conf
+09/22/2020 16:05:00 [7666] clean up route...
+09/22/2020 16:05:00 [7666] truncate pppd.log
+09/22/2020 16:05:00 [7666] truncate forticlientsslvpn.log
+09/22/2020 16:05:00 [5571] FortiClient SSLVPN[4.0.2332] stopped
