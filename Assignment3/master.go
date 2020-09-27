@@ -6,49 +6,40 @@ import (
 	"net"
 	"os"
 	"strconv"
-	"strings"
 	"sync"
 	"time"
 )
 
 type data struct {
-	time float64
+	time int64
 	addr *net.UDPAddr
 }
 
 var startTime time.Time
 var slaves = make(map[int]data)
 
-func getTimeString(t time.Time) string {
-	str := t.String()
-	i := strings.Index(str, " m=")
-	return str[i+4:]
+func getTime() int64 {
+	return int64(time.Since(startTime))
 }
 
-func getTime(t time.Time) float64 {
-	ret, err := strconv.ParseFloat(getTimeString(t), 64)
-	if err != nil {
-		fmt.Println(err.Error())
-	}
-	return ret
+func getTimeString() string {
+	return strconv.FormatInt(getTime(), 10)
 }
 
-func broadcastTime(conn *net.UDPConn, syncTime float64, wg *sync.WaitGroup) {
+func broadcastTime(conn *net.UDPConn, syncTime int64, wg *sync.WaitGroup) {
 	for _, slave := range slaves {
-		sendData := strconv.FormatFloat(syncTime, 'f', -1, 64)
+		sendData := strconv.FormatInt(syncTime, 10)
 		_, err := conn.WriteToUDP([]byte(sendData), slave.addr)
 		if err != nil {
 			fmt.Println(err.Error())
 		}
 	}
-	syncFl := syncTime - getTime(startTime)
-	sync, err := time.ParseDuration(strconv.FormatFloat(syncFl, 'f', -1, 64) + "s")
+	syncDiff := strconv.FormatInt(getTime()-syncTime, 10) + "ns"
+	sync, err := time.ParseDuration(syncDiff)
 	if err != nil {
 		fmt.Println(err.Error())
 	}
-	fmt.Println(startTime, sync)
 	startTime = startTime.Add(sync)
-	fmt.Println(startTime)
 	defer wg.Done()
 }
 
@@ -59,12 +50,13 @@ func synchronizeClocks(conn *net.UDPConn, wg *sync.WaitGroup) {
 		if len(slaves) == 0 {
 			continue
 		}
-		masterTime := getTime(startTime)
-		var sumDiff float64 = 0
+		fmt.Println(len(slaves))
+		masterTime := getTime()
+		var sumDiff int64 = 0
 		for _, slave := range slaves {
 			sumDiff += masterTime - slave.time
 		}
-		syncTime := masterTime + sumDiff/float64(len(slaves))
+		syncTime := masterTime + (sumDiff / int64(len(slaves)+1))
 		wg.Add(1)
 		go broadcastTime(conn, syncTime, wg)
 	}
@@ -80,7 +72,7 @@ func receiveTime(conn *net.UDPConn, wg *sync.WaitGroup) {
 		if err != nil {
 			fmt.Println(err.Error())
 		}
-		t, _ := strconv.ParseFloat(string(p), 64)
+		t, _ := strconv.ParseInt(string(p), 10, 64)
 		slaves[remoteaddr.Port] = data{t, remoteaddr}
 	}
 	defer wg.Done()
@@ -88,7 +80,8 @@ func receiveTime(conn *net.UDPConn, wg *sync.WaitGroup) {
 
 func printTime(wg *sync.WaitGroup) {
 	for {
-		fmt.Println("Local time is", getTime(time.Now())-getTime(startTime))
+		// fmt.Println(getTime())
+		fmt.Println("Local time is", time.Since(startTime))
 		time.Sleep(5 * time.Second)
 	}
 	defer wg.Done()

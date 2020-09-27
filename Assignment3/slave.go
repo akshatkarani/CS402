@@ -7,30 +7,23 @@ import (
 	"net"
 	"os"
 	"strconv"
-	"strings"
 	"sync"
 	"time"
 )
 
 var startTime time.Time
 
-func getTimeString(t time.Time) string {
-	str := t.String()
-	i := strings.Index(str, " m=")
-	return str[i+4:]
+func getTime() int64 {
+	return int64(time.Since(startTime))
 }
 
-func getTime(t time.Time) float64 {
-	ret, err := strconv.ParseFloat(getTimeString(t), 64)
-	if err != nil {
-		fmt.Println(err.Error())
-	}
-	return ret
+func getTimeString() string {
+	return strconv.FormatInt(getTime(), 10)
 }
 
 func startSendingTime(conn net.Conn, wg *sync.WaitGroup) {
 	for {
-		fmt.Fprintf(conn, getTimeString(startTime))
+		fmt.Fprintf(conn, getTimeString())
 		// fmt.Println("Recent time successfully sent")
 		time.Sleep(5 * time.Second)
 	}
@@ -45,15 +38,13 @@ func startReceivingTime(conn net.Conn, wg *sync.WaitGroup) {
 			fmt.Println("Error", err.Error())
 		}
 		p = bytes.Trim(p, "\x00")
-		t, _ := strconv.ParseFloat(string(p), 64)
-		syncFl := t - getTime(startTime)
-		sync, err := time.ParseDuration(strconv.FormatFloat(syncFl, 'f', -1, 64) + "s")
+		syncTime, _ := strconv.ParseInt(string(p), 10, 64)
+		syncDiff := strconv.FormatInt(getTime()-syncTime, 10) + "ns"
+		sync, err := time.ParseDuration(syncDiff)
 		if err != nil {
-			fmt.Println("Error", err)
+			fmt.Println(err.Error())
 		}
-		fmt.Println(startTime, sync)
 		startTime = startTime.Add(sync)
-		fmt.Println(startTime)
 		// fmt.Println("Time Synchronized")
 		time.Sleep(1 * time.Second)
 	}
@@ -62,7 +53,7 @@ func startReceivingTime(conn net.Conn, wg *sync.WaitGroup) {
 
 func printTime(wg *sync.WaitGroup) {
 	for {
-		fmt.Println("Local time is", getTime(time.Now())-getTime(startTime))
+		fmt.Println("Local time is", time.Since(startTime))
 		time.Sleep(5 * time.Second)
 	}
 	defer wg.Done()
