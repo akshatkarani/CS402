@@ -9,15 +9,19 @@ import (
 	"time"
 )
 
+type data struct {
+	time int64
+	addr *net.UDPAddr
+}
+
 var startTime time.Time
-var slaves = make(map[net.UDPAddr]int64)
+var slaves = make(map[int]data)
 
 func broadcastTime(conn *net.UDPConn, syncTime int64, wg *sync.WaitGroup) {
-	fmt.Println("Length is ", slaves)
-	for slaveAddr, slaveTime := range slaves {
-		sTime := syncTime - slaveTime
-		fmt.Println("Sent time to", slaveAddr)
-		_, err := conn.WriteToUDP([]byte(strconv.FormatInt(sTime, 10)), slaveAddr)
+	for _, slave := range slaves {
+		sTime := syncTime - slave.time
+		sendData := []byte(strconv.FormatInt(sTime, 10))
+		_, err := conn.WriteToUDP(sendData, slave.addr)
 		if err != nil {
 			fmt.Println(err.Error())
 		}
@@ -28,14 +32,14 @@ func broadcastTime(conn *net.UDPConn, syncTime int64, wg *sync.WaitGroup) {
 func synchronizeClocks(conn *net.UDPConn, wg *sync.WaitGroup) {
 	for {
 		time.Sleep(5 * time.Second)
-		fmt.Println("Synchronizing Time")
+		// fmt.Println("Synchronizing Time")
 		if len(slaves) == 0 {
 			continue
 		}
 		masterTime := int64(time.Now().Sub(startTime))
 		var sumDiff int64 = 0
-		for _, slaveTime := range slaves {
-			sumDiff += masterTime - slaveTime
+		for _, slave := range slaves {
+			sumDiff += masterTime - slave.time
 		}
 		syncTime := masterTime + sumDiff/int64(len(slaves))
 		wg.Add(1)
@@ -45,15 +49,23 @@ func synchronizeClocks(conn *net.UDPConn, wg *sync.WaitGroup) {
 }
 
 func receiveTime(conn *net.UDPConn, wg *sync.WaitGroup) {
-	p := make([]byte, 2048)
+	p := make([]byte, 4096)
 	for {
 		_, remoteaddr, err := conn.ReadFromUDP(p)
-		fmt.Println("Received time from", remoteaddr)
+		// fmt.Println("Received time from", remoteaddr)
 		if err != nil {
 			fmt.Println(err.Error())
 		}
 		t, _ := strconv.Atoi(string(p))
-		slaves[remoteaddr] = int64(t)
+		slaves[remoteaddr.Port] = data{int64(t), remoteaddr}
+	}
+	defer wg.Done()
+}
+
+func printTime(wg *sync.WaitGroup) {
+	for {
+		fmt.Println("Local time is", time.Now().Sub(startTime))
+		time.Sleep(5 * time.Second)
 	}
 	defer wg.Done()
 }
@@ -70,8 +82,9 @@ func main() {
 	defer conn.Close()
 
 	var wg sync.WaitGroup
-	wg.Add(2)
+	wg.Add(3)
 	go receiveTime(conn, &wg)
 	go synchronizeClocks(conn, &wg)
+	go printTime(&wg)
 	wg.Wait()
 }

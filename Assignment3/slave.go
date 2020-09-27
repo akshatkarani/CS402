@@ -2,6 +2,7 @@ package main
 
 import (
 	"bufio"
+	"bytes"
 	"fmt"
 	"net"
 	"os"
@@ -16,35 +17,34 @@ func startSendingTime(conn net.Conn, wg *sync.WaitGroup) {
 		sendTime := time.Now().Sub(startTime)
 		startTime.Add(sendTime)
 		fmt.Fprintf(conn, string(sendTime))
-		fmt.Println("Recent time successfully sent")
+		// fmt.Println("Recent time successfully sent")
 		time.Sleep(5 * time.Second)
 	}
 	wg.Done()
 }
 
 func startReceivingTime(conn net.Conn, wg *sync.WaitGroup) {
-	p := make([]byte, 2048)
 	for {
+		p := make([]byte, 4096)
 		_, err := bufio.NewReader(conn).Read(p)
 		if err != nil {
-			fmt.Println(err.Error())
-			return
+			fmt.Println("Error", err.Error())
 		}
-		sync, err := time.ParseDuration(string(p))
+		p = bytes.Trim(p, "\x00")
+		sync, err := time.ParseDuration(string(p) + "ns")
 		if err != nil {
-			fmt.Println(err.Error())
-			return
+			fmt.Println("Error", err)
 		}
 		startTime = startTime.Add(sync)
-		fmt.Println("Time Synchronized")
-		//time.Sleep(5 * time.Second)
+		// fmt.Println("Time Synchronized")
+		time.Sleep(1 * time.Second)
 	}
 	defer wg.Done()
 }
 
 func printTime(wg *sync.WaitGroup) {
 	for {
-		fmt.Println("Local time is", startTime)
+		fmt.Println("Local time is", time.Now().Sub(startTime))
 		time.Sleep(5 * time.Second)
 	}
 	defer wg.Done()
