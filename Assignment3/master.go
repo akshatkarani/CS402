@@ -11,34 +11,21 @@ import (
 )
 
 type data struct {
-	time int64
+	time time.Duration
 	addr *net.UDPAddr
 }
 
 var startTime time.Time
 var slaves = make(map[int]data)
 
-func getTime() int64 {
-	return int64(time.Since(startTime))
-}
-
-func getTimeString() string {
-	return strconv.FormatInt(getTime(), 10)
-}
-
-func broadcastTime(conn *net.UDPConn, syncTime int64, wg *sync.WaitGroup) {
+func broadcastTime(conn *net.UDPConn, syncTime time.Duration, wg *sync.WaitGroup) {
 	for _, slave := range slaves {
-		sendData := strconv.FormatInt(syncTime, 10)
-		_, err := conn.WriteToUDP([]byte(sendData), slave.addr)
+		_, err := conn.WriteToUDP([]byte(syncTime.String()), slave.addr)
 		if err != nil {
 			fmt.Println(err.Error())
 		}
 	}
-	syncDiff := strconv.FormatInt(getTime()-syncTime, 10) + "ns"
-	sync, err := time.ParseDuration(syncDiff)
-	if err != nil {
-		fmt.Println(err.Error())
-	}
+	sync := time.Since(startTime) - syncTime
 	startTime = startTime.Add(sync)
 	defer wg.Done()
 }
@@ -50,13 +37,12 @@ func synchronizeClocks(conn *net.UDPConn, wg *sync.WaitGroup) {
 		if len(slaves) == 0 {
 			continue
 		}
-		fmt.Println(len(slaves))
-		masterTime := getTime()
-		var sumDiff int64 = 0
+		masterTime := time.Since(startTime)
+		sumDiff := masterTime
 		for _, slave := range slaves {
 			sumDiff += masterTime - slave.time
 		}
-		syncTime := masterTime + (sumDiff / int64(len(slaves)+1))
+		syncTime := masterTime + sumDiff/time.Duration(len(slaves)+1)
 		wg.Add(1)
 		go broadcastTime(conn, syncTime, wg)
 	}
@@ -72,7 +58,7 @@ func receiveTime(conn *net.UDPConn, wg *sync.WaitGroup) {
 		if err != nil {
 			fmt.Println(err.Error())
 		}
-		t, _ := strconv.ParseInt(string(p), 10, 64)
+		t, _ := time.ParseDuration(string(p))
 		slaves[remoteaddr.Port] = data{t, remoteaddr}
 	}
 	defer wg.Done()

@@ -6,24 +6,15 @@ import (
 	"fmt"
 	"net"
 	"os"
-	"strconv"
 	"sync"
 	"time"
 )
 
 var startTime time.Time
 
-func getTime() int64 {
-	return int64(time.Since(startTime))
-}
-
-func getTimeString() string {
-	return strconv.FormatInt(getTime(), 10)
-}
-
 func startSendingTime(conn net.Conn, wg *sync.WaitGroup) {
 	for {
-		fmt.Fprintf(conn, getTimeString())
+		fmt.Fprintf(conn, time.Since(startTime).String())
 		// fmt.Println("Recent time successfully sent")
 		time.Sleep(5 * time.Second)
 	}
@@ -38,12 +29,8 @@ func startReceivingTime(conn net.Conn, wg *sync.WaitGroup) {
 			fmt.Println("Error", err.Error())
 		}
 		p = bytes.Trim(p, "\x00")
-		syncTime, _ := strconv.ParseInt(string(p), 10, 64)
-		syncDiff := strconv.FormatInt(getTime()-syncTime, 10) + "ns"
-		sync, err := time.ParseDuration(syncDiff)
-		if err != nil {
-			fmt.Println(err.Error())
-		}
+		syncTime, _ := time.ParseDuration(string(p))
+		sync := time.Since(startTime) - syncTime
 		startTime = startTime.Add(sync)
 		// fmt.Println("Time Synchronized")
 		time.Sleep(1 * time.Second)
