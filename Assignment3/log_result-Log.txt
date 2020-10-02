@@ -1,0 +1,122 @@
+Master {"Master":1}
+Initialization Complete
+Master {"Master":2}
+INFO-Time request sent to 127.0.0.1:5555
+Slave:5556 {"Slave:5556":2}
+INFO-Time request received
+Slave:5555 {"Slave:5555":2}
+INFO-Time request received
+Master {"Master":3}
+INFO-Time request sent to 127.0.0.1:5556
+Slave:5556 {"Slave:5556":3}
+INFO-Local time sent
+Slave:5555 {"Slave:5555":3}
+INFO-Local time sent
+Master {"Master":4}
+INFO-Local time received from127.0.0.1:5556
+Master {"Master":5}
+INFO-Local time received from127.0.0.1:5555
+Master {"Master":6}
+INFO-Local time synchronized
+Master {"Master":7}
+INFO-Synchronized time sent to127.0.0.1:5555
+Master {"Master":8}
+INFO-Synchronized time sent to127.0.0.1:5556
+Slave:5555 {"Slave:5555":4}
+INFO-Synchronized time received
+Slave:5555 {"Slave:5555":5}
+INFO-Local time synchronized
+Slave:5556 {"Slave:5556":4}
+INFO-Synchronized time received
+Slave:5556 {"Slave:5556":5}
+INFO-Local time synchronized
+Master {"Master":9}
+INFO-Time request sent to 127.0.0.1:5556
+Slave:5556 {"Slave:5556":6}
+INFO-Time request received
+Master {"Master":10}
+INFO-Time request sent to 127.0.0.1:5555
+Slave:5555 {"Slave:5555":6}
+INFO-Time request received
+Slave:5556 {"Slave:5556":7}
+INFO-Local time sent
+Slave:5555 {"Slave:5555":7}
+INFO-Local time sent
+Master {"Master":11}
+INFO-Local time received from127.0.0.1:5556
+Master {"Master":12}
+INFO-Local time received from127.0.0.1:5555
+Master {"Master":13}
+INFO-Local time synchronized
+Master {"Master":14}
+INFO-Synchronized time sent to127.0.0.1:5555
+Slave:5555 {"Slave:5555":8}
+INFO-Synchronized time received
+Slave:5555 {"Slave:5555":9}
+INFO-Local time synchronized
+Master {"Master":15}
+INFO-Synchronized time sent to127.0.0.1:5556
+Slave:5556 {"Slave:5556":8}
+INFO-Synchronized time received
+Slave:5556 {"Slave:5556":9}
+INFO-Local time synchronized
+Master {"Master":16}
+INFO-Time request sent to 127.0.0.1:5556
+Slave:5556 {"Slave:5556":10}
+INFO-Time request received
+Master {"Master":17}
+INFO-Time request sent to 127.0.0.1:5555
+Slave:5555 {"Slave:5555":10}
+INFO-Time request received
+Slave:5556 {"Slave:5556":11}
+INFO-Local time sent
+Slave:5555 {"Slave:5555":11}
+INFO-Local time sent
+Master {"Master":18}
+INFO-Local time received from127.0.0.1:5556
+Master {"Master":19}
+INFO-Local time received from127.0.0.1:5555
+Master {"Master":20}
+INFO-Local time synchronized
+Master {"Master":21}
+INFO-Synchronized time sent to127.0.0.1:5555
+Master {"Master":22}
+INFO-Synchronized time sent to127.0.0.1:5556
+Slave:5556 {"Slave:5556":12}
+INFO-Synchronized time received
+Slave:5555 {"Slave:5555":12}
+INFO-Synchronized time received
+Slave:5556 {"Slave:5556":13}
+INFO-Local time synchronized
+Slave:5555 {"Slave:5555":13}
+INFO-Local time synchronized
+Master {"Master":23}
+INFO-Time request sent to 127.0.0.1:5556
+Slave:5556 {"Slave:5556":14}
+INFO-Time request received
+Slave:5555 {"Slave:5555":14}
+INFO-Time request received
+Master {"Master":24}
+INFO-Time request sent to 127.0.0.1:5555
+Slave:5556 {"Slave:5556":15}
+INFO-Local time sent
+Slave:5555 {"Slave:5555":15}
+INFO-Local time sent
+Master {"Master":25}
+INFO-Local time received from127.0.0.1:5555
+Master {"Master":26}
+INFO-Local time received from127.0.0.1:5556
+Master {"Master":27}
+INFO-Local time synchronized
+Master {"Master":28}
+INFO-Synchronized time sent to127.0.0.1:5555
+Master {"Master":29}
+INFO-Synchronized time sent to127.0.0.1:5556
+Slave:5556 {"Slave:5556":16}
+INFO-Synchronized time received
+Slave:5556 {"Slave:5556":17}
+INFO-Local time synchronized
+Slave:5555 {"Slave:5555":16}
+INFO-Synchronized time received
+Slave:5555 {"Slave:5555":17}
+INFO-Local time synchronized
