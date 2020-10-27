@@ -1,0 +1,26 @@
+Slave:5555 {"Slave:5555":1}
+Initialization Complete
+Slave:5555 {"Slave:5555":2, "Master":3}
+Time request received
+Slave:5555 {"Slave:5555":3, "Master":3}
+Local time sent
+Slave:5555 {"Master":8, "Slave:5556":3, "Slave:5555":4}
+Synchronized time received
+Slave:5555 {"Slave:5555":5, "Master":8, "Slave:5556":3}
+INFO-Local time synchronized
+Slave:5555 {"Slave:5555":6, "Master":10, "Slave:5556":3}
+Time request received
+Slave:5555 {"Slave:5555":7, "Master":10, "Slave:5556":3}
+Local time sent
+Slave:5555 {"Slave:5556":7, "Slave:5555":8, "Master":15}
+Synchronized time received
+Slave:5555 {"Slave:5555":9, "Master":15, "Slave:5556":7}
+INFO-Local time synchronized
+Slave:5555 {"Master":17, "Slave:5556":7, "Slave:5555":10}
+Time request received
+Slave:5555 {"Slave:5555":11, "Master":17, "Slave:5556":7}
+Local time sent
+Slave:5555 {"Master":22, "Slave:5556":11, "Slave:5555":12}
+Synchronized time received
+Slave:5555 {"Slave:5555":13, "Master":22, "Slave:5556":11}
+INFO-Local time synchronized
